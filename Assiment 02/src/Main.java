@@ -8,7 +8,7 @@ public class Main {
 
         int userInput;                                                                                                  // Variable to store the main menu user input
         int userInput2;                                                                                                 // Variable to store the submenu user input
-        int s=0;                                                                                                        // Counter of the number of students added
+                                                                                                                        // Counter of the number of students added
 
         do {
             Menu();                                                                                                     // Called the method to display the main menu
@@ -18,23 +18,14 @@ public class Main {
 
                 case 1:                                                                                                 // input data for a student
                     do {                                                                                                // Checks if the number of students is less than 5 because max number of students is 5
-                        if(s!=5) {
-                            student student = new student("", "", 0, "", 0);             // Creates a new student object
-                            student.obtainDetail();                                                                     // Called method to obtain details for the student
-                            student.calculateGrades();                                                                  // Called method to calculate the grade
-                            students.add(student);                                                                      // Added the student object to the ArrayList
-                            Menu1();                                                                                    // Called the method to display the submenu
-                            s++;                                                                                        // Increase the student counter
-                            userInput2 = scanner.nextInt();                                                             //  user input for the submenu
-                        } else {
-                            System.out.println("maximum input level reached!!!!!!");
-                            System.out.println();
-                            System.out.println();
-                            System.out.println("returning to the menu.........");
-                            System.out.println();
-                            System.out.println();
-                            break;                                                                                      // Exits the while loop if the maximum number of students is reached
-                        }
+                        student student = new student("", "", 0, "", 0);                 // Creates a new student object
+                        student.obtainDetail();                                                                         // Called method to obtain details for the student
+                        student.calculateGrades();                                                                      // Called method to calculate the grade
+                        students.add(student);                                                                          // Added the student object to the ArrayList
+                        Menu1();                                                                                        // Called the method to display the submenu
+                                                                                                                        // Increase the student counter
+                        userInput2 = scanner.nextInt();                                                                 //  user input for the submenu
+
                     } while(userInput2 != 2);                                                                           // Continues to prompt for another student until user chooses to go back to the main menu
                     break;
 
